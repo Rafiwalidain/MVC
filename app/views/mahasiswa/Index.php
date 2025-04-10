@@ -18,9 +18,10 @@
 
             <ul class="list-group">
                 <?php foreach ($data["mhs"] as $mhs) : ?>
-                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <li class="list-group-item">
                         <?php echo $mhs["nama"]; ?>
-                        <a href="<?php echo BASEURL; ?>/mahasiswa/detail/<?php echo $mhs["id"]; ?>" class="badge text-bg-primary">Detail</a>
+                        <a href="<?php echo BASEURL; ?>/mahasiswa/hapus/<?php echo $mhs["id"]; ?>" class="badge text-bg-danger float-end ms-2" onclick="return confirm('yakin?');">Delete</a>
+                        <a href="<?php echo BASEURL; ?>/mahasiswa/detail/<?php echo $mhs["id"]; ?>" class="badge text-bg-primary float-end ms-2">Detail</a>
                     </li>
                 <?php endforeach; ?>
             </ul>
