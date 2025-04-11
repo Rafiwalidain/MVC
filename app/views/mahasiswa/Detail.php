@@ -5,7 +5,7 @@
             <h6 class="card-subtitle mb-2 text-body-secondary"><?php echo $data["mhs"]["npm"]; ?></h6>
             <p class="card-text"><?php echo $data["mhs"]["email"]; ?></p>
             <p class="card-text"><?php echo $data["mhs"]["jurusan"]; ?></p>
-            <a href="<?php echo BASEURL; ?>/mahasiswa" class="card-link">Back</a>
+            <a href="<?php echo BASEURL; ?>/mahasiswa" class="card-link" style="text-decoration: none;">Back</a>
         </div>
     </div>
 </div>

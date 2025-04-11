@@ -9,7 +9,7 @@
 
     <div class="row">
         <div class="col-lg-6">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#formModal">
+            <button type="button" class="btn btn-primary tombolTambahData" data-bs-toggle="modal" data-bs-target="#formModal">
                 Tambah Data Mahasiswa
             </button>
             <br>
@@ -20,8 +20,9 @@
                 <?php foreach ($data["mhs"] as $mhs) : ?>
                     <li class="list-group-item">
                         <?php echo $mhs["nama"]; ?>
-                        <a href="<?php echo BASEURL; ?>/mahasiswa/hapus/<?php echo $mhs["id"]; ?>" class="badge text-bg-danger float-end ms-2" onclick="return confirm('yakin?');">Delete</a>
-                        <a href="<?php echo BASEURL; ?>/mahasiswa/detail/<?php echo $mhs["id"]; ?>" class="badge text-bg-primary float-end ms-2">Detail</a>
+                        <a href="<?php echo BASEURL; ?>/mahasiswa/hapus/<?php echo $mhs["id"]; ?>" class="badge text-bg-danger float-end ms-2" style="text-decoration: none;" onclick="return confirm('yakin?');">Delete</a>
+                        <a href="<?php echo BASEURL; ?>/mahasiswa/ubah/<?php echo $mhs["id"]; ?>" class="badge text-bg-success float-end ms-2 tampilModalUbah" style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?php echo $mhs['id'] ?>">Edit</a>
+                        <a href="<?php echo BASEURL; ?>/mahasiswa/detail/<?php echo $mhs["id"]; ?>" class="badge text-bg-primary float-end ms-2" style="text-decoration: none;">Detail</a>
                     </li>
                 <?php endforeach; ?>
             </ul>
@@ -41,6 +42,7 @@
             </div>
             <div class="modal-body">
                 <form action="<?php echo BASEURL; ?>/mahasiswa/tambah" method="post">
+                    <input type="hidden" name="id" id="id">
                     <div class="mb-3">
                         <label for="nama" class="form-label">Nama</label>
                         <input type="text" class="form-control" id="nama" name="nama">
